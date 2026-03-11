@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: zks-fragrances-api
+    env: node
+    region: singapore
+    plan: free
+    buildCommand: cd backend && npm install
+    startCommand: node backend/server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: GOOGLE_SERVICE_ACCOUNT_JSON
+        sync: false
+      - key: GOOGLE_SHEET_ID
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
