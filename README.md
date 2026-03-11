@@ -1,32 +1,79 @@
 # ZKS Fragrances — Full-Stack E-Commerce Platform
 
-A direct-to-consumer premium fragrance brand website for Pakistan. WhatsApp-native checkout, Google Sheets order logging, MongoDB persistence.
+Premium fragrance **direct-to-consumer e-commerce platform** built with a lightweight frontend and Node.js backend.
+Orders are placed via **WhatsApp checkout** and automatically stored in **MongoDB and Google Sheets**.
 
 ---
 
-## 🗂️ Project Structure
+![Node.js](https://img.shields.io/badge/Node.js-18+-green)
+![Express](https://img.shields.io/badge/Express.js-Backend-black)
+![MongoDB](https://img.shields.io/badge/MongoDB-Database-green)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple)
+![Vercel](https://img.shields.io/badge/Vercel-Frontend-black)
+![Render](https://img.shields.io/badge/Render-Backend-blue)
+
+---
+
+# Features
+
+* Product catalog with filters
+* Dynamic product pages
+* Local cart using browser storage
+* WhatsApp-based checkout
+* Automatic order logging
+* MongoDB database persistence
+* Google Sheets order dashboard
+* Mobile responsive design
+* SEO friendly static pages
+
+---
+
+# Architecture
+
+```
+Customer Browser
+       │
+       │
+       ▼
+Frontend (HTML + JS)
+       │
+       │ Checkout Request
+       ▼
+Node.js API (Express)
+       │
+       ├── MongoDB Atlas
+       │
+       └── Google Sheets API
+```
+
+Frontend handles UI and cart logic while the backend records orders and syncs them to external services.
+
+---
+
+# Project Structure
 
 ```
 zks-fragrances/
-├── frontend/          ← Static site (deploy to Vercel)
-│   ├── index.html     ← Homepage
-│   ├── shop.html      ← Catalog with filters
-│   ├── product.html   ← Product detail (dynamic via URL param)
-│   ├── cart.html      ← Cart + WhatsApp checkout
-│   ├── about.html     ← Brand story
-│   ├── policies.html  ← Return, shipping, privacy, HAZMAT
-│   ├── css/           ← main, components, animations, responsive
-│   ├── js/            ← data, main, shop, product, cart, quiz, checkout, animations
-│   └── assets/        ← images, brand logo SVG
 │
-├── backend/           ← Node.js API (deploy to Render)
+├── frontend/
+│   ├── index.html
+│   ├── shop.html
+│   ├── product.html
+│   ├── cart.html
+│   ├── about.html
+│   ├── policies.html
+│   ├── css/
+│   ├── js/
+│   └── assets/
+│
+├── backend/
 │   ├── server.js
-│   ├── routes/        ← orders.js, health.js
-│   ├── controllers/   ← orderController.js
-│   ├── models/        ← Order.js (Mongoose)
-│   ├── services/      ← googleSheets.js
-│   ├── middleware/    ← cors.js, errorHandler.js
-│   ├── config/        ← db.js
+│   ├── routes/
+│   ├── controllers/
+│   ├── models/
+│   ├── services/
+│   ├── middleware/
+│   ├── config/
 │   └── .env.example
 │
 └── README.md
@@ -34,119 +81,139 @@ zks-fragrances/
 
 ---
 
-## ⚡ Local Development
+# Local Development
 
-### Frontend (no build needed)
-Open `frontend/index.html` in a browser, or use VS Code Live Server:
+## Frontend
+
+Serve the static site:
+
 ```bash
-# Using npm's serve package
 npx serve frontend
-# Visit: http://localhost:3000
 ```
 
-### Backend
+Open:
+
+```
+http://localhost:3000
+```
+
+---
+
+## Backend
+
 ```bash
 cd backend
 npm install
 cp .env.example .env
-# Fill in your .env values (see Environment Variables section)
 npm run dev
-# API runs at http://localhost:3000
+```
+
+API runs at:
+
+```
+http://localhost:3000
 ```
 
 ---
 
-## 🔑 Environment Variables
+# Environment Variables
 
-Copy `backend/.env.example` to `backend/.env` and fill in:
+Create `.env` in the backend folder.
 
-| Variable | Description |
-|---|---|
-| `MONGODB_URI` | MongoDB Atlas connection string |
-| `GOOGLE_SERVICE_ACCOUNT_JSON` | Full JSON of service account credentials (stringified) |
-| `GOOGLE_SHEET_ID` | Spreadsheet ID from Google Sheets URL |
-| `FRONTEND_URL` | Your Vercel deployment URL (e.g. `https://zks.vercel.app`) |
-| `PORT` | Server port (default: 3000, auto-set by Render) |
-| `NODE_ENV` | Set to `production` for deployment |
-
----
-
-## 🚀 Deployment
-
-### Frontend → Vercel
-1. Push the `frontend/` folder to a GitHub repo
-2. Go to [vercel.com](https://vercel.com) → New Project → Import repo
-3. Set **Root Directory** to `frontend`
-4. Deploy — `vercel.json` handles clean URLs and caching
-
-### Backend → Render
-1. Push the entire repo to GitHub
-2. Go to [render.com](https://render.com) → New Web Service → Import repo
-3. Set Build Command: `cd backend && npm install`
-4. Set Start Command: `node backend/server.js`
-5. Add all environment variables from `.env.example` in Render's dashboard
-6. Deploy — `render.yaml` has the full config
-
-### Database → MongoDB Atlas
-1. Create a free M0 cluster at [cloud.mongodb.com](https://cloud.mongodb.com)
-2. Create a database user and get the connection string
-3. Set IP whitelist to `0.0.0.0/0` (Render uses dynamic IPs)
-4. Paste connection string as `MONGODB_URI`
-
-### Google Sheets Setup
-1. Create a Google Sheets spreadsheet with a tab named **"Orders"**
-2. Row 1 headers: `Order ID | Date & Time | Item Names | Qty Each | Total Price | Status`
-3. Go to [Google Cloud Console](https://console.cloud.google.com)
-4. Enable **Google Sheets API**
-5. Create a **Service Account** and download the JSON key
-6. Share the spreadsheet with the service account email (Editor access)
-7. Set `GOOGLE_SERVICE_ACCOUNT_JSON` = the full JSON contents (stringified, one line)
-8. Set `GOOGLE_SHEET_ID` = the ID from the Sheets URL
+| Variable                    | Description                        |
+| --------------------------- | ---------------------------------- |
+| MONGODB_URI                 | MongoDB Atlas connection string    |
+| GOOGLE_SERVICE_ACCOUNT_JSON | Google service account credentials |
+| GOOGLE_SHEET_ID             | Google Sheets spreadsheet ID       |
+| FRONTEND_URL                | Frontend deployment URL            |
+| PORT                        | Server port                        |
+| NODE_ENV                    | Environment                        |
 
 ---
 
-## 📱 Product Images
+# Deployment
 
-Place product images in `frontend/assets/images/products/`:
+## Frontend (Vercel)
 
-| Slug | Primary | Hover |
-|---|---|---|
-| `aqua-ember` | `aqua-ember.webp` | `aqua-ember-hover.webp` |
-| `aqua-bloom` | `aqua-bloom.webp` | `aqua-bloom-hover.webp` |
-| `dark-ember` | `dark-ember.webp` | `dark-ember-hover.webp` |
-| `golden-hours` | `golden-hours.webp` | `golden-hours-hover.webp` |
-| `illusion` | `illusion.webp` | `illusion-hover.webp` |
-| `zks-tulip` | `zks-tulip.webp` | `zks-tulip-hover.webp` |
-| `ultra-man` | `ultra-man.webp` | `ultra-man-hover.webp` |
-| `velvet-soul` | `velvet-soul.webp` | `velvet-soul-hover.webp` |
+1. Push repository to GitHub
+2. Import project on Vercel
+3. Set root directory to:
 
-Hero background: `frontend/assets/images/hero/hero-bg.webp` (compress to < 200KB)
+```
+frontend
+```
 
-> **Tip:** If images are missing, the site gracefully shows styled initials placeholders.
+4. Deploy
 
 ---
 
-## 🛒 Checkout Flow
+## Backend (Render)
 
-1. Customer adds items to cart (localStorage)
-2. Clicks "Checkout via WhatsApp" → pre-checkout modal appears
-3. Customer confirms → WhatsApp opens with pre-filled order message
-4. Simultaneously, order POST to `/api/orders` saves to MongoDB + Google Sheets
-5. Cart is cleared, thank-you screen appears
+Build command:
+
+```bash
+cd backend && npm install
+```
+
+Start command:
+
+```bash
+node backend/server.js
+```
+
+Add all environment variables in the Render dashboard.
 
 ---
 
-## 🔌 API Reference
+## Database (MongoDB Atlas)
 
-### `POST /api/orders`
+1. Create cluster
+2. Create database user
+3. Whitelist IP access
+4. Add connection string to `MONGODB_URI`
+
+---
+
+# Google Sheets Setup
+
+1. Create spreadsheet with sheet name:
+
+```
+Orders
+```
+
+Headers:
+
+```
+Order ID | Date & Time | Item Names | Qty Each | Total Price | Status
+```
+
+2. Enable **Google Sheets API**
+3. Create **Service Account**
+4. Share sheet with service account email
+5. Add credentials to environment variables
+
+---
+
+# API
+
+## POST `/api/orders`
+
 Create a new order.
 
-**Request body:**
+Example request:
+
 ```json
 {
   "orderId": "ZKS-1726000000000",
   "items": [
-    { "id": "aqua-ember", "name": "Aqua Ember", "price": 2200, "qty": 1, "lineTotal": 2200 }
+    {
+      "id": "aqua-ember",
+      "name": "Aqua Ember",
+      "price": 2200,
+      "qty": 1,
+      "lineTotal": 2200
+    }
   ],
   "total": 2200,
   "timestamp": "2024-09-10T12:00:00.000Z",
@@ -154,35 +221,49 @@ Create a new order.
 }
 ```
 
-**Response (201):**
+Response:
+
 ```json
-{ "success": true, "message": "Order created successfully.", "orderId": "ZKS-1726000000000" }
+{
+  "success": true,
+  "orderId": "ZKS-1726000000000"
+}
 ```
 
-### `GET /api/health`
-Returns API status, DB connection state, and uptime.
+---
+
+## GET `/api/health`
+
+Returns API health status and database connectivity.
 
 ---
 
-## 📦 Tech Stack
+# Tech Stack
 
-| Layer | Tech |
-|---|---|
-| Frontend | HTML5, Vanilla CSS, Bootstrap 5, Vanilla JS (ES6+) |
-| Backend | Node.js 18+, Express.js |
-| Database | MongoDB Atlas (Mongoose ODM) |
-| Order Log | Google Sheets API v4 |
-| Checkout | WhatsApp Business deep-link |
-| Deploy (FE) | Vercel |
-| Deploy (BE) | Render (free tier) |
-
----
-
-## 📞 Contact & Support
-
-- **WhatsApp**: +92 340 7122385
-- **Instagram**: [@muhammadzakria917](https://www.instagram.com/muhammadzakria917?igsh=emF3MmJnbjA3Zjdp)
+| Layer         | Technology                                 |
+| ------------- | ------------------------------------------ |
+| Frontend      | HTML5, CSS3, Bootstrap, Vanilla JavaScript |
+| Backend       | Node.js, Express.js                        |
+| Database      | MongoDB Atlas                              |
+| Order Logging | Google Sheets API                          |
+| Checkout      | WhatsApp deep link                         |
+| Deployment    | Vercel + Render                            |
 
 ---
 
-*© 2024 ZKS Fragrances. Crafted with intention.*
+# Roadmap
+
+Future improvements:
+
+* Admin dashboard
+* Payment gateway integration
+* Email order confirmation
+* Inventory management
+* Analytics dashboard
+
+---
+
+# License
+
+MIT License
+
