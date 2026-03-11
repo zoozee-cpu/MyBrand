@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZKS Fragrances — Wear the Unseen</title>
+  <meta name="description" content="Eight artisan fragrances crafted for those who move with intention. Premium 50ml Eau de Parfum — delivered across Pakistan.">
+  <meta name="theme-color" content="#0D1F0F">
+
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Hero preload -->
+  <link rel="preload" as="image" href="assets/images/hero/hero-bg.webp">
+</head>
+<body>
+
+<!-- ─── NAVBAR ───────────────────────────────────────────────── -->
+<nav class="navbar" id="navbar" aria-label="Main navigation">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-brand" aria-label="ZKS Fragrances home">
+      <img src="assets/brand/logo.svg" alt="ZKS Fragrances" class="navbar-logo">
+    </a>
+    <ul class="navbar-links" role="list">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="policies.html">Policies</a></li>
+    </ul>
+    <div class="navbar-actions">
+      <a href="https://www.instagram.com/muhammadzakria917?igsh=emF3MmJnbjA3Zjdp" target="_blank" rel="noopener noreferrer" class="navbar-icon-btn" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="cart.html" class="navbar-icon-btn" aria-label="Shopping cart" id="cart-nav-link">
+        <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="cart-badge" id="cart-badge" style="display:none">0</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Mobile navigation">
+  <a href="index.html">Home</a>
+  <a href="shop.html">Shop</a>
+  <a href="about.html">About</a>
+  <a href="policies.html">Policies</a>
+  <div class="mobile-nav-actions">
+    <a href="cart.html" class="btn btn-outline btn-sm">Cart</a>
+  </div>
+</div>
+
+<!-- ─── HERO ─────────────────────────────────────────────────── -->
+<section class="hero-section" style="
+  min-height:100vh;
+  background:url('assets/images/hero/hero-bg.webp') center center / cover no-repeat fixed;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;">
+  <!-- Gradient overlay -->
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom, rgba(13,31,15,0.3) 0%, rgba(13,31,15,0.88) 100%);z-index:1"></div>
+
+  <!-- Instagram badge (hero) -->
+  <a href="https://www.instagram.com/muhammadzakria917?igsh=emF3MmJnbjA3Zjdp"
+     target="_blank" rel="noopener noreferrer"
+     class="hero-animate-ig"
+     style="position:absolute;bottom:32px;right:32px;z-index:3;display:flex;align-items:center;gap:10px;padding:10px 18px;background:rgba(13,31,15,0.7);border:1px solid rgba(201,168,76,0.3);backdrop-filter:blur(8px);text-decoration:none;border-radius:2px;"
+     aria-label="Follow on Instagram">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="#C9A84C"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    <span style="font-family:'Josefin Sans',sans-serif;font-size:0.75rem;letter-spacing:0.1em;color:#D4C5A9">@muhammadzakria917</span>
+  </a>
+
+  <div style="position:relative;z-index:2;text-align:center;padding:0 24px;max-width:900px;">
+    <h1 class="hero-animate-1 text-shimmer" style="font-family:'Playfair Display',serif;font-size:var(--text-hero);font-weight:900;line-height:1.05;margin-bottom:24px;">
+      Wear the Unseen.
+    </h1>
+    <p class="hero-animate-2" style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.1rem,2.5vw,1.5rem);font-weight:300;font-style:italic;color:var(--color-text-secondary);margin-bottom:48px;max-width:640px;margin-left:auto;margin-right:auto;">
+      Eight stories. One skin. Crafted for those who move with intention.
+    </p>
+    <div class="hero-animate-3 hero-cta-group" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;">
+      <a href="shop.html" class="btn btn-primary btn-lg btn-glow">Explore the Collection</a>
+    </div>
+    <div class="hero-animate-4">
+      <button class="btn btn-ghost" data-quiz-open style="border-color:rgba(201,168,76,0.3);">
+        Find Your Scent →
+      </button>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="hero-animate-5 scroll-indicator" style="position:absolute;bottom:40px;left:50%;transform:translateX(-50%);z-index:2;">
+    <div class="scroll-chevron" style="color:var(--color-gold-muted);">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BRAND STATEMENT ──────────────────────────────────────── -->
+<section class="section" style="background:var(--color-bg-secondary);border-top:var(--border-global);border-bottom:var(--border-global);">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5" data-animate="fade-left">
+        <span class="section-label">Our Philosophy</span>
+        <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:24px;">Precision<br>Crafted.</h2>
+        <p style="font-size:1.1rem;line-height:1.9;margin-bottom:24px;">ZKS Fragrances was built on a simple conviction: that great scent should not be a luxury reserved for the few. Each of our eight compositions is crafted with the same precision and intention you'd find in the world's finest fragrance houses — at a price that respects the Pakistani consumer.</p>
+        <p style="margin-bottom:32px;">We source premium aromatic compounds and blend them with an obsessive attention to balance — ensuring every note speaks at the right moment, every dry-down tells a story worth remembering.</p>
+        <hr class="divider-gold">
+        <span style="font-family:'Josefin Sans',sans-serif;font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--color-gold-primary);">50ml · Eau de Parfum · Made with Intention</span>
+      </div>
+      <div class="col-lg-7" data-animate="fade-right">
+        <div style="position:relative;padding:24px;">
+          <!-- Geometric gold frame effect -->
+          <div style="position:absolute;top:0;left:0;width:60%;height:60%;border-top:2px solid var(--color-gold-primary);border-left:2px solid var(--color-gold-primary);opacity:0.4;border-radius:2px;"></div>
+          <div style="position:absolute;bottom:0;right:0;width:60%;height:60%;border-bottom:2px solid var(--color-gold-primary);border-right:2px solid var(--color-gold-primary);opacity:0.4;border-radius:2px;"></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div style="background:var(--color-bg-surface);border:var(--border-global);padding:32px 24px;text-align:center;border-radius:2px;">
+              <div style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:var(--color-gold-primary);" data-count="8" data-suffix="">0</div>
+              <div style="font-family:'Josefin Sans',sans-serif;font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-text-muted);margin-top:8px;">Unique Scents</div>
+            </div>
+            <div style="background:var(--color-bg-surface);border:var(--border-global);padding:32px 24px;text-align:center;border-radius:2px;margin-top:24px;">
+              <div style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:var(--color-gold-primary);">50<span style="font-size:1.5rem">ml</span></div>
+              <div style="font-family:'Josefin Sans',sans-serif;font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-text-muted);margin-top:8px;">Artisan Bottles</div>
+            </div>
+            <div style="background:var(--color-bg-surface);border:var(--border-global);padding:32px 24px;text-align:center;border-radius:2px;margin-top:-24px;">
+              <div style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:var(--color-gold-primary);">Rs<span style="font-size:1.5rem">2K</span></div>
+              <div style="font-family:'Josefin Sans',sans-serif;font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-text-muted);margin-top:8px;">Starting From</div>
+            </div>
+            <div style="background:var(--color-bg-surface);border:var(--border-global);padding:32px 24px;text-align:center;border-radius:2px;">
+              <div style="font-size:2rem;">🇵🇰</div>
+              <div style="font-family:'Josefin Sans',sans-serif;font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-text-muted);margin-top:8px;">Nationwide Delivery</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FEATURED PRODUCTS ─────────────────────────────────────── -->
+<section class="section" id="featured">
+  <div class="container">
+    <div class="text-center mb-5" data-animate="fade-up">
+      <div class="ornament"><span class="ornament-icon">✦</span></div>
+      <span class="section-label">The Collection</span>
+      <h2 class="section-title">Featured Fragrances</h2>
+      <p class="section-subtitle">Handpicked from our eight carefully composed scents — each one a world unto itself.</p>
+    </div>
+    <div id="featured-grid" class="product-grid" style="margin-bottom:48px;">
+      <!-- Populated by JS -->
+      <div style="grid-column:1/-1;text-align:center;padding:80px;color:var(--color-text-muted);">
+        <div class="spinner"></div>
+      </div>
+    </div>
+    <div class="text-center" data-animate="fade-up">
+      <a href="shop.html" class="btn btn-outline btn-lg">View All Fragrances →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SCENT EXPERIENCE BANNER ──────────────────────────────── -->
+<section style="padding:clamp(80px,12vh,140px) 0;background:radial-gradient(ellipse at center, var(--color-bg-surface) 0%, var(--color-bg-primary) 70%);border-top:var(--border-global);border-bottom:var(--border-global);text-align:center;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center, rgba(201,168,76,0.06) 0%, transparent 60%);pointer-events:none;"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div data-animate="scale-up">
+      <p style="font-family:'Josefin Sans',sans-serif;font-size:0.75rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--color-gold-primary);margin-bottom:16px;">The ZKS Experience</p>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:900;color:var(--color-text-primary);margin-bottom:56px;line-height:1.1;">"Every note<br>tells a story."</h2>
+    </div>
+    <div class="stats-row" style="display:flex;justify-content:center;gap:clamp(32px,8vw,96px);flex-wrap:wrap;">
+      <div data-animate="fade-up" style="text-align:center;">
+        <div style="font-size:2.5rem;margin-bottom:12px;">🌿</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--color-gold-primary);margin-bottom:4px;">8 Fragrances</div>
+        <div style="font-family:'Josefin Sans',sans-serif;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-text-muted);">Unique Compositions</div>
+      </div>
+      <div data-animate="fade-up" style="text-align:center;">
+        <div style="font-size:2.5rem;margin-bottom:12px;">✦</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--color-gold-primary);margin-bottom:4px;">50ml Bottles</div>
+        <div style="font-family:'Josefin Sans',sans-serif;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-text-muted);">Artisan Crafted</div>
+      </div>
+      <div data-animate="fade-up" style="text-align:center;">
+        <div style="font-size:2.5rem;margin-bottom:12px;">📦</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--color-gold-primary);margin-bottom:4px;">All of Pakistan</div>
+        <div style="font-family:'Josefin Sans',sans-serif;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-text-muted);">Nationwide Delivery</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── QUIZ CTA ───────────────────────────────────────────────── -->
+<section class="section" style="padding:0;overflow:hidden;">
+  <div style="display:grid;grid-template-columns:1fr 1fr;min-height:440px;">
+    <!-- Green side -->
+    <div style="background:var(--color-bg-secondary);display:flex;align-items:center;padding:clamp(40px,8vw,96px);">
+      <div data-animate="fade-left">
+        <span style="font-family:'Josefin Sans',sans-serif;font-size:0.75rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--color-gold-primary);display:block;margin-bottom:16px;">Fragrance Finder</span>
+        <h2 style="font-size:clamp(1.75rem,3.5vw,2.75rem);font-weight:700;margin-bottom:16px;line-height:1.2;">Not sure which<br>scent is yours?</h2>
+        <p style="font-size:1.1rem;margin-bottom:32px;line-height:1.8;">Take our 3-question Fragrance Finder and discover your signature scent in under a minute.</p>
+        <button class="btn btn-primary btn-lg" data-quiz-open>Take the Quiz</button>
+      </div>
+    </div>
+    <!-- Gold side -->
+    <div style="background:linear-gradient(135deg, var(--color-gold-primary) 0%, var(--color-gold-muted) 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+      <div data-animate="scale-up" style="text-align:center;padding:40px;position:relative;z-index:1;">
+        <div style="font-family:'Playfair Display',serif;font-size:6rem;font-weight:900;color:rgba(0,0,0,0.15);line-height:1;margin-bottom:16px;">?</div>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:300;font-style:italic;color:rgba(13,31,15,0.7);max-width:260px;">"The right fragrance finds you — we just help it along."</p>
+      </div>
+      <div style="position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,0.08);"></div>
+      <div style="position:absolute;bottom:-60px;left:-60px;width:240px;height:240px;border-radius:50%;background:rgba(0,0,0,0.08);"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─────────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="footer-grid">
+    <!-- Brand -->
+    <div>
+      <img src="assets/brand/logo.svg" alt="ZKS Fragrances" class="footer-brand-logo">
+      <p class="footer-tagline">"Eight stories. One skin.<br>Crafted with intention."</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/muhammadzakria917?igsh=emF3MmJnbjA3Zjdp" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://wa.me/923407122385" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        </a>
+      </div>
+    </div>
+    <!-- Quick links -->
+    <div>
+      <span class="footer-col-title">Quick Links</span>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop All</a></li>
+        <li><a href="about.html">About ZKS</a></li>
+        <li><a href="cart.html">Your Cart</a></li>
+      </ul>
+    </div>
+    <!-- Policies -->
+    <div>
+      <span class="footer-col-title">Policies</span>
+      <ul class="footer-links">
+        <li><a href="policies.html#returns">Return & Exchange</a></li>
+        <li><a href="policies.html#shipping">Shipping Policy</a></li>
+        <li><a href="policies.html#privacy">Privacy Policy</a></li>
+        <li><a href="policies.html#hazmat">HAZMAT Notice</a></li>
+      </ul>
+    </div>
+    <!-- Contact -->
+    <div>
+      <span class="footer-col-title">Contact Us</span>
+      <a href="https://wa.me/923407122385" target="_blank" rel="noopener noreferrer" class="footer-contact-item">
+        <span>💬</span>
+        <span>+92 340 7122385<br><small style="font-size:0.75rem;opacity:0.6;">WhatsApp Orders</small></span>
+      </a>
+      <a href="https://www.instagram.com/muhammadzakria917?igsh=emF3MmJnbjA3Zjdp" target="_blank" rel="noopener noreferrer" class="footer-contact-item">
+        <span>📸</span>
+        <span>@muhammadzakria917</span>
+      </a>
+    </div>
+  </div>
+  <div class="footer-bottom" style="border-top:var(--border-global);">
+    <p class="footer-copyright">© 2024 ZKS Fragrances. All rights reserved.</p>
+    <p class="footer-copyright" style="font-style:italic;color:var(--color-gold-muted);">Crafted with intention. Delivered with care.</p>
+  </div>
+</footer>
+
+<!-- ─── QUIZ MODAL ─────────────────────────────────────────────── -->
+<div class="quiz-modal" id="quiz-modal" role="dialog" aria-modal="true" aria-label="Fragrance Finder Quiz">
+  <div class="quiz-progress-bar-wrap">
+    <div class="quiz-progress-bar" id="quiz-progress-bar" style="width:33%"></div>
+  </div>
+  <button class="quiz-close" id="quiz-close" aria-label="Close quiz">✕</button>
+  <div class="quiz-inner" id="quiz-inner">
+    <!-- Populated by quiz.js -->
+  </div>
+</div>
+
+<!-- ─── TOAST CONTAINER ──────────────────────────────────────── -->
+<div id="toast-container" role="status" aria-live="polite"></div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+<!-- App JS -->
+<script src="js/data.js" defer></script>
+<script src="js/cart.js" defer></script>
+<script src="js/quiz.js" defer></script>
+<script src="js/animations.js" defer></script>
+<script src="js/main.js" defer></script>
+<!-- Featured products render -->
+<script defer>
+document.addEventListener('DOMContentLoaded', () => {
+  const grid = document.getElementById('featured-grid');
+  if (!grid) return;
+  const featured = PRODUCTS.filter(p => p.featured).slice(0, 6);
+  grid.innerHTML = featured.map(p => {
+    const badge = p.badge ? `<span class="badge badge-gold product-card-badge">${p.badge}</span>` : '';
+    const initials = p.name.split(' ').map(w=>w[0]).join('').slice(0,2);
+    return `
+    <div class="product-card" data-animate="fade-up" onclick="window.location.href='product.html?id=${p.id}'">
+      <div class="product-card-image-wrap">
+        ${badge}
+        <img class="product-card-img" src="${p.images.primary}" alt="${p.name}"
+          loading="lazy"
+          onerror="this.parentElement.innerHTML='<div class=\\'product-card-placeholder\\'>${initials}</div>'">
+        <img class="product-card-img-hover" src="${p.images.hover}" alt="${p.name} alternate" loading="lazy">
+      </div>
+      <div class="product-card-body">
+        <div class="product-card-families">${p.scentFamily.join(' · ')}</div>
+        <h3 class="product-card-name">${p.name}</h3>
+        <div class="product-card-price">${p.currency} ${p.price.toLocaleString()}</div>
+        <hr class="product-card-rule">
+        <div class="product-card-actions">
+          <button class="btn btn-outline btn-sm" onclick="event.stopPropagation();addToCart('${p.id}');showToast('✓ ${p.name} added','View Cart','cart.html')">Quick Add</button>
+          <a class="btn btn-ghost btn-sm" href="product.html?id=${p.id}" onclick="event.stopPropagation()">View →</a>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  // Stagger
+  grid.querySelectorAll('.product-card').forEach((c,i) => c.style.transitionDelay = `${i*0.08}s`);
+  if (typeof initScrollObserver === 'function') initScrollObserver();
+});
+</script>
+</body>
+</html>

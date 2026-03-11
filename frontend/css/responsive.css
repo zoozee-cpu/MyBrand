@@ -1,0 +1,154 @@
+/* ============================================================
+   ZKS FRAGRANCES — RESPONSIVE.CSS
+   Breakpoint-specific overrides beyond Bootstrap's coverage
+   ============================================================ */
+
+/* ─── LARGE DESKTOP (> 1400px) ──────────────────────────────── */
+@media (min-width: 1400px) {
+  .container { padding: 0 var(--space-5); }
+}
+
+/* ─── TABLET (< 992px) ──────────────────────────────────────── */
+@media (max-width: 991.98px) {
+  /* Show hamburger, hide desktop nav */
+  .hamburger { display: flex; }
+  .navbar-links { display: none; }
+  .mobile-nav { display: flex; }
+
+  /* Footer: 2 column */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+  }
+
+  /* Shop: full-width */
+  .filter-sidebar {
+    position: static;
+    margin-bottom: var(--space-4);
+  }
+
+  /* Hero text smaller */
+  .hero-headline { font-size: clamp(2.5rem, 7vw, 5rem); }
+
+  /* Product gallery: stack */
+  .product-detail-layout {
+    flex-direction: column;
+  }
+}
+
+/* ─── MOBILE (< 768px) ──────────────────────────────────────── */
+@media (max-width: 767.98px) {
+  /* Footer: single column */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Cart items: stack */
+  .cart-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cart-item-img { width: 120px; height: 120px; }
+
+  .cart-item-footer {
+    justify-content: center;
+  }
+
+  /* Quiz: single column results */
+  .quiz-result-cards { grid-template-columns: 1fr; }
+
+  /* Checkout modal buttons: stack */
+  .checkout-modal-actions {
+    flex-direction: column;
+  }
+
+  .checkout-modal-actions .btn { width: 100%; }
+
+  /* Product page: full width gallery + info */
+  .gallery-thumbs { justify-content: center; }
+
+  /* Toast: full width */
+  #toast-container {
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+  }
+
+  .toast { max-width: 100%; }
+
+  /* Shop header bar: stack */
+  .shop-header-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  /* Section heading size */
+  .section-title { font-size: var(--text-3xl); }
+
+  /* Disable fixed background on mobile (performance) */
+  .hero-section {
+    background-attachment: scroll !important;
+  }
+
+  /* Quiz inner smaller padding */
+  .quiz-inner { padding: var(--space-2); }
+
+  /* Pyramid: reduce padding */
+  .pyramid-layer { padding: var(--space-2) var(--space-3); }
+
+  /* Product card: smaller name */
+  .product-card-name { font-size: var(--text-lg); }
+
+  /* Navbar actions: smaller gap */
+  .navbar-actions { gap: var(--space-2); }
+}
+
+/* ─── SMALL MOBILE (< 480px) ─────────────────────────────────── */
+@media (max-width: 479.98px) {
+  :root {
+    --space-3: 20px;
+    --space-4: 28px;
+  }
+
+  .btn { padding: 12px 24px; font-size: var(--text-xs); }
+  .btn-lg { padding: 14px 32px; font-size: var(--text-sm); }
+
+  /* Most narrow viewport */
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Page headers smaller */
+  .page-header-title { font-size: clamp(1.75rem, 8vw, 2.5rem); }
+
+  /* Qty selector full width */
+  .qty-action-row {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .qty-action-row .btn { width: 100%; }
+
+  /* Stats: single column */
+  .stats-row { flex-direction: column; gap: var(--space-4); }
+}
+
+/* ─── PRINT ──────────────────────────────────────────────────── */
+@media print {
+  .navbar, .footer, .quiz-modal, #toast-container { display: none !important; }
+  body { background: #fff; color: #000; }
+}

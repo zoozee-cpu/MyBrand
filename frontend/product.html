@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Detail — ZKS Fragrances</title>
+  <meta name="description" content="Explore the full scent story, fragrance pyramid, and notes for this ZKS Fragrances composition.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-brand"><img src="assets/brand/logo.svg" alt="ZKS Fragrances" class="navbar-logo"></a>
+    <ul class="navbar-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html" class="active">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="policies.html">Policies</a></li>
+    </ul>
+    <div class="navbar-actions">
+      <a href="https://www.instagram.com/muhammadzakria917?igsh=emF3MmJnbjA3Zjdp" target="_blank" rel="noopener noreferrer" class="navbar-icon-btn" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="cart.html" class="navbar-icon-btn" aria-label="Cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="cart-badge" id="cart-badge" style="display:none">0</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="policies.html">Policies</a>
+  <div class="mobile-nav-actions"><a href="cart.html" class="btn btn-outline btn-sm">Cart</a></div>
+</div>
+
+<!-- BREADCRUMB -->
+<div style="padding:100px 0 0;background:var(--color-bg-primary);">
+  <div class="container">
+    <nav aria-label="breadcrumb" style="font-family:var(--font-ui);font-size:0.75rem;letter-spacing:0.1em;color:var(--color-text-muted);">
+      <a href="index.html" style="color:var(--color-text-muted);text-decoration:none;">Home</a>
+      <span style="margin:0 8px;opacity:0.4;">/</span>
+      <a href="shop.html" style="color:var(--color-text-muted);text-decoration:none;">Shop</a>
+      <span style="margin:0 8px;opacity:0.4;">/</span>
+      <span id="breadcrumb-product-name" style="color:var(--color-gold-primary);">Loading…</span>
+    </nav>
+  </div>
+</div>
+
+<!-- PRODUCT DETAIL -->
+<div id="product-detail-container">
+  <section class="section-sm">
+    <div class="container">
+      <div class="row g-5 align-items-start">
+        <!-- Gallery -->
+        <div class="col-lg-6">
+          <div class="product-gallery" data-animate="fade-left">
+            <div class="gallery-main" id="gallery-main">
+              <img class="gallery-main-img" id="gallery-main-img" src="" alt="">
+            </div>
+            <div class="gallery-thumbs" id="gallery-thumbs"></div>
+          </div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="col-lg-6" data-animate="fade-right">
+          <div id="pd-badge" class="badge badge-gold mb-3" style="display:none;"></div>
+          <div id="pd-families" style="margin-bottom:12px;"></div>
+          <h1 id="pd-name" style="font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:12px;"></h1>
+          <div id="pd-price" class="price price-large" style="margin-bottom:16px;display:block;"></div>
+          <p id="pd-description" style="font-size:1.1rem;font-style:italic;margin-bottom:24px;"></p>
+          <div id="pd-tags" style="margin-bottom:24px;"></div>
+
+          <!-- Qty + Add to Cart -->
+          <div style="display:flex;gap:16px;align-items:center;margin-bottom:24px;flex-wrap:wrap;" class="qty-action-row">
+            <div class="qty-selector">
+              <button class="qty-btn" id="qty-minus" aria-label="Decrease quantity">−</button>
+              <span class="qty-display" id="qty-display">1</span>
+              <button class="qty-btn" id="qty-plus" aria-label="Increase quantity">+</button>
+            </div>
+            <button id="add-to-cart-btn" class="btn btn-primary btn-lg" style="flex:1;min-width:200px;">Add to Cart</button>
+          </div>
+
+          <hr class="divider-gold">
+
+          <!-- Scent Pyramid -->
+          <div class="pyramid-section">
+            <div class="pyramid-title">Scent Pyramid</div>
+            <div id="scent-pyramid"></div>
+          </div>
+
+          <hr class="divider-gold">
+
+          <!-- Long Description -->
+          <div style="margin:24px 0;">
+            <h3 style="font-size:1rem;font-family:var(--font-ui);letter-spacing:0.2em;text-transform:uppercase;color:var(--color-gold-primary);margin-bottom:16px;">The Story</h3>
+            <p id="pd-long-description" style="font-size:1.05rem;line-height:1.9;"></p>
+          </div>
+
+          <!-- WhatsApp Share -->
+          <a id="pd-wa-share" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm" style="width:100%;display:flex;align-items:center;justify-content:center;gap:8px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--color-gold-primary)"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Share on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED PRODUCTS -->
+  <section class="section-sm" style="background:var(--color-bg-secondary);border-top:var(--border-global);">
+    <div class="container">
+      <div class="text-center mb-4">
+        <span class="section-label">You May Also Like</span>
+        <h2 class="section-title" style="font-size:var(--text-3xl);">Related Fragrances</h2>
+      </div>
+      <div id="related-products" class="product-grid"></div>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <img src="assets/brand/logo.svg" alt="ZKS Fragrances" class="footer-brand-logo">
+      <p class="footer-tagline">"Eight stories. One skin. Crafted with intention."</p>
+    </div>
+    <div>
+      <span class="footer-col-title">Quick Links</span>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li><li><a href="shop.html">Shop All</a></li>
+        <li><a href="about.html">About ZKS</a></li><li><a href="cart.html">Your Cart</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="footer-col-title">Policies</span>
+      <ul class="footer-links">
+        <li><a href="policies.html#returns">Returns</a></li>
+        <li><a href="policies.html#shipping">Shipping</a></li>
+        <li><a href="policies.html#privacy">Privacy</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="footer-col-title">Contact</span>
+      <a href="https://wa.me/923407122385" class="footer-contact-item" target="_blank" rel="noopener noreferrer">
+        <span>💬</span><span>+92 340 7122385</span>
+      </a>
+    </div>
+  </div>
+  <div class="footer-bottom"><p class="footer-copyright">© 2024 ZKS Fragrances. All rights reserved.</p></div>
+</footer>
+
+<!-- QUIZ MODAL -->
+<div class="quiz-modal" id="quiz-modal" role="dialog" aria-modal="true">
+  <div class="quiz-progress-bar-wrap"><div class="quiz-progress-bar" id="quiz-progress-bar" style="width:33%"></div></div>
+  <button class="quiz-close" id="quiz-close" aria-label="Close quiz">✕</button>
+  <div class="quiz-inner" id="quiz-inner"></div>
+</div>
+<div id="toast-container" role="status" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+<script src="js/data.js" defer></script>
+<script src="js/cart.js" defer></script>
+<script src="js/shop.js" defer></script>
+<script src="js/product.js" defer></script>
+<script src="js/quiz.js" defer></script>
+<script src="js/animations.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>

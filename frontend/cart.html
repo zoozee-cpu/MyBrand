@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart — ZKS Fragrances</title>
+  <meta name="description" content="Review your ZKS Fragrances order and checkout via WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar scrolled" id="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-brand"><img src="assets/brand/logo.svg" alt="ZKS Fragrances" class="navbar-logo"></a>
+    <ul class="navbar-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="policies.html">Policies</a></li>
+    </ul>
+    <div class="navbar-actions">
+      <a href="https://www.instagram.com/muhammadzakria917?igsh=emF3MmJnbjA3Zjdp" target="_blank" rel="noopener noreferrer" class="navbar-icon-btn" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="cart.html" class="navbar-icon-btn" aria-label="Cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="cart-badge" id="cart-badge" style="display:none">0</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="policies.html">Policies</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="container">
+    <span class="section-label">Your Selections</span>
+    <h1 class="page-header-title">Your Cart</h1>
+  </div>
+</div>
+
+<section class="section-sm">
+  <div class="container">
+
+    <!-- THANK YOU SCREEN (hidden by default) -->
+    <div id="cart-thankyou" style="display:none;flex-direction:column;align-items:center;text-align:center;padding:80px 24px;">
+      <div style="width:80px;height:80px;background:rgba(201,168,76,0.15);border:1px solid var(--color-gold-primary);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin-bottom:32px;">✓</div>
+      <h2 style="font-size:var(--text-3xl);margin-bottom:16px;">Order Received!</h2>
+      <p style="font-size:1.2rem;max-width:500px;margin-bottom:32px;">Your order has been received! We'll confirm your order and delivery details via WhatsApp shortly.</p>
+      <a href="shop.html" class="btn btn-outline btn-lg">Continue Shopping</a>
+    </div>
+
+    <!-- EMPTY STATE -->
+    <div id="cart-empty" style="display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 24px;">
+      <span style="font-size:4rem;display:block;margin-bottom:24px;">🛒</span>
+      <h2 style="font-size:var(--text-3xl);margin-bottom:16px;">Your cart is empty</h2>
+      <p style="font-size:1.1rem;max-width:400px;margin-bottom:32px;">"The scent that moves you is waiting — explore our collection."</p>
+      <a href="shop.html" class="btn btn-primary btn-lg">Shop Now</a>
+    </div>
+
+    <!-- CART LAYOUT -->
+    <div class="row g-5">
+      <!-- Line Items -->
+      <div class="col-lg-8" id="cart-list" style="display:none;"></div>
+
+      <!-- Order Summary -->
+      <div class="col-lg-4" id="cart-summary" style="display:none;">
+        <div class="order-summary-card">
+          <h2 class="order-summary-title">Order Summary</h2>
+          <div class="order-row">
+            <span>Subtotal</span>
+            <span id="cart-subtotal">Rs 0</span>
+          </div>
+          <div class="order-row">
+            <span>Delivery</span>
+            <span style="color:var(--color-text-muted);font-size:0.85rem;">Quoted via WhatsApp</span>
+          </div>
+          <div class="order-row order-row-total">
+            <span>Total</span>
+            <span id="cart-total">Rs 0</span>
+          </div>
+          <div style="margin-top:24px;padding:16px;background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.2);border-radius:2px;margin-bottom:24px;">
+            <p style="font-family:var(--font-ui);font-size:0.75rem;letter-spacing:0.08em;color:var(--color-text-muted);margin:0;">
+              🚚 Standard delivery 3–7 business days across Pakistan. Shipping fee quoted individually via WhatsApp.
+            </p>
+          </div>
+          <button id="checkout-btn" class="btn btn-primary btn-lg btn-full" disabled>
+            Checkout via WhatsApp
+          </button>
+          <a href="shop.html" class="btn btn-ghost btn-sm btn-full" style="margin-top:12px;">Continue Shopping</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRE-CHECKOUT MODAL -->
+<div class="checkout-modal-overlay" id="checkout-modal-overlay">
+  <div class="checkout-modal">
+    <h2 class="checkout-modal-title">Before we redirect you…</h2>
+    <p class="checkout-modal-note">Please note: Provide your full name and delivery address on WhatsApp. Our team will confirm your order within 24 hours.</p>
+    <div class="checkout-modal-summary" id="checkout-modal-summary">Loading summary…</div>
+    <div class="checkout-modal-actions">
+      <button class="btn btn-ghost" id="checkout-cancel-btn">Cancel</button>
+      <button class="btn btn-primary" id="checkout-confirm-btn">
+        Confirm & Open WhatsApp
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <img src="assets/brand/logo.svg" alt="ZKS Fragrances" class="footer-brand-logo">
+      <p class="footer-tagline">"Eight stories. One skin. Crafted with intention."</p>
+    </div>
+    <div>
+      <span class="footer-col-title">Quick Links</span>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li><li><a href="shop.html">Shop All</a></li>
+        <li><a href="about.html">About ZKS</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="footer-col-title">Policies</span>
+      <ul class="footer-links">
+        <li><a href="policies.html#returns">Returns</a></li>
+        <li><a href="policies.html#shipping">Shipping</a></li>
+        <li><a href="policies.html#privacy">Privacy</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="footer-col-title">Contact</span>
+      <a href="https://wa.me/923407122385" class="footer-contact-item" target="_blank" rel="noopener noreferrer">
+        <span>💬</span><span>+92 340 7122385</span>
+      </a>
+    </div>
+  </div>
+  <div class="footer-bottom"><p class="footer-copyright">© 2024 ZKS Fragrances. All rights reserved.</p></div>
+</footer>
+
+<div id="toast-container" role="status" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+<script src="js/data.js" defer></script>
+<script src="js/cart.js" defer></script>
+<script src="js/checkout.js" defer></script>
+<script src="js/animations.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>

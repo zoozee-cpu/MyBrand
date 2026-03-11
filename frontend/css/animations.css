@@ -1,0 +1,247 @@
+/* ============================================================
+   ZKS FRAGRANCES — ANIMATIONS.CSS
+   Keyframes, scroll-reveal, transitions, micro-interactions
+   ============================================================ */
+
+/* ─── SCROLL REVEAL ─────────────────────────────────────────── */
+[data-animate="fade-up"] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+[data-animate="fade-in"] {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+[data-animate="fade-left"] {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+[data-animate="fade-right"] {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+[data-animate="scale-up"] {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.is-visible {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* ─── KEYFRAME DEFINITIONS ──────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes cartPulse {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.4); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes scrollChevron {
+  0%   { opacity: 1; transform: translateY(0); }
+  50%  { opacity: 0.3; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes goldGlow {
+  0%, 100% { box-shadow: 0 0 15px rgba(201, 168, 76, 0.2); }
+  50%      { box-shadow: 0 0 35px rgba(201, 168, 76, 0.5); }
+}
+
+@keyframes floatUp {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes progressFill {
+  from { width: 0%; }
+  to   { width: var(--target-width, 100%); }
+}
+
+/* ─── HERO ENTRANCE ANIMATIONS ──────────────────────────────── */
+.hero-animate-1 {
+  animation: fadeInUp 0.9s ease both;
+  animation-delay: 0.2s;
+}
+
+.hero-animate-2 {
+  animation: fadeInUp 0.9s ease both;
+  animation-delay: 0.5s;
+}
+
+.hero-animate-3 {
+  animation: fadeInUp 0.9s ease both;
+  animation-delay: 0.8s;
+}
+
+.hero-animate-4 {
+  animation: fadeInUp 0.9s ease both;
+  animation-delay: 1s;
+}
+
+.hero-animate-5 {
+  animation: fadeIn 1s ease both;
+  animation-delay: 1.5s;
+}
+
+.hero-animate-ig {
+  animation: fadeIn 1s ease both;
+  animation-delay: 2s;
+}
+
+/* ─── SCROLL INDICATOR ──────────────────────────────────────── */
+.scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text-muted);
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.scroll-chevron {
+  animation: scrollChevron 2s ease-in-out infinite;
+}
+
+/* ─── SHIMMER TEXT (Gold Gradient) ──────────────────────────── */
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-gold-primary) 0%,
+    var(--color-gold-light) 25%,
+    var(--color-gold-primary) 50%,
+    var(--color-gold-light) 75%,
+    var(--color-gold-primary) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ─── GOLD GLOW BUTTON ──────────────────────────────────────── */
+.btn-glow {
+  animation: goldGlow 3s ease-in-out infinite;
+}
+
+/* ─── FLOAT ANIMATION ───────────────────────────────────────── */
+.float-animate {
+  animation: floatUp 4s ease-in-out infinite;
+}
+
+/* ─── PAGE TRANSITION ───────────────────────────────────────── */
+.page-enter {
+  animation: fadeIn 0.5s ease both;
+}
+
+/* ─── STAGGER HELPERS ───────────────────────────────────────── */
+.stagger-1  { transition-delay: 0.0s !important; }
+.stagger-2  { transition-delay: 0.1s !important; }
+.stagger-3  { transition-delay: 0.2s !important; }
+.stagger-4  { transition-delay: 0.3s !important; }
+.stagger-5  { transition-delay: 0.4s !important; }
+.stagger-6  { transition-delay: 0.5s !important; }
+
+/* ─── PRODUCT IMAGE HOVER SWAP ──────────────────────────────── */
+.product-card-img,
+.product-card-img-hover {
+  will-change: opacity;
+}
+
+/* ─── MOBILE: disable heavy hover on touch ───────────────────── */
+@media (hover: none) {
+  .product-card:hover {
+    transform: none;
+    box-shadow: var(--shadow-card);
+  }
+}
+
+/* ─── LOADING SPINNER ───────────────────────────────────────── */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--color-border);
+  border-top-color: var(--color-gold-primary);
+  border-radius: 50%;
+  animation: spinSlow 0.8s linear infinite;
+  margin: 0 auto;
+}
+
+/* ─── NUMBER TICKER ─────────────────────────────────────────── */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.stat-number {
+  animation: countUp 0.6s ease both;
+}
+
+/* ─── INSTAGRAM BADGE FLOAT ─────────────────────────────────── */
+.hero-ig-badge {
+  animation: hero-animate-ig 1s ease both, floatUp 4s ease-in-out 2s infinite;
+}
+
+/* ─── NAV LINK HOVER ─────────────────────────────────────────── */
+/* defined in components.css via ::after pseudo-element */
+
+/* ─── QUIZ STEP TRANSITION ──────────────────────────────────── */
+@keyframes quizSlideIn {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes quizSlideOut {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(-30px); }
+}
+
+.quiz-step-enter { animation: quizSlideIn 0.4s var(--ease-luxury) both; }
+.quiz-step-exit  { animation: quizSlideOut 0.3s ease both; }
